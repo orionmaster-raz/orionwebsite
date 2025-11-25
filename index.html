@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion Ventures Ltd. | Innovative SaaS Products</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use Inter font family */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f172a', /* slate-900 */
+                        'secondary-dark': '#1e293b', /* slate-800 */
+                        'accent-light': '#a5b4fc', /* indigo-300 */
+                        'accent-main': '#6366f1', /* indigo-500 */
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Removed LLM and Firebase logic for a cleaner, simpler landing page -->
+</head>
+<body class="bg-primary-dark text-gray-100 antialiased">
+
+    <!-- Header / Navigation (Minimal) -->
+    <header class="py-4 border-b border-secondary-dark sticky top-0 bg-primary-dark/95 z-10 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight text-accent-light">
+                Orion<span class="text-accent-main">Ventures</span>
+            </div>
+            <!-- Minimal Navigation (Placeholder for future pages) -->
+            <nav class="space-x-4 text-sm hidden sm:block">
+                <a href="#services" class="hover:text-accent-main transition duration-150">Services</a>
+                <a href="#contact" class="hover:text-accent-main transition duration-150">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- 1. Hero Section -->
+            <section class="text-center mb-20">
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-light">
+                    Building the Future of SaaS.
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                    Orion Ventures Ltd. crafts intelligent, scalable software solutions—from powerful Chrome Extensions to advanced Chatbots and proprietary Web Services—designed to automate and elevate your business operations.
+                </p>
+
+                <!-- Call to Action -->
+                <a href="#contact" class="inline-block px-10 py-4 text-lg font-bold text-white bg-accent-main rounded-xl shadow-lg shadow-indigo-500/50 hover:bg-indigo-600 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    Start Your Project
+                </a>
+            </section>
+
+            <!-- 2. Services / Products Overview -->
+            <section id="services" class="pt-16 pb-12">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-light">
+                    Our Core Offerings
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Product Type 1: Web Services Apps -->
+                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
+                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Web Services & APIs</h3>
+                        <p class="text-gray-400 text-sm">Scalable backend systems and custom APIs powering modern web applications globally.</p>
+                    </div>
+
+                    <!-- Product Type 2: Chrome Extensions -->
+                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
+                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 10A2 2 0 007.25 8h-4A2 2 0 001.25 10L.75 17M14.75 17L14.25 10A2 2 0 0012.25 8h-4A2 2 0 006.25 10L5.75 17M19.75 17L19.25 10A2 2 0 0017.25 8h-4A2 2 0 0011.25 10L10.75 17"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Browser Extensions</h3>
+                        <p class="text-gray-400 text-sm">Enhancing productivity and integrating tools directly into user workflows.</p>
+                    </div>
+
+                    <!-- Product Type 3: Chatbots & AI -->
+                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
+                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.676A9.95 9.95 0 0112 3c4.97 0 9 3.582 9 8z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Intelligent Chatbots</h3>
+                        <p class="text-gray-400 text-sm">Automating customer support, lead generation, and internal knowledge access with AI.</p>
+                    </div>
+
+                    <!-- Product Type 4: Custom Software -->
+                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
+                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 012-2m-2 2a2 2 0 002 2m7-2a2 2 0 012-2m-2 2a2 2 0 002 2m-4-2h-4"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Bespoke Applications</h3>
+                        <p class="text-gray-400 text-sm">Developing tailored software to solve complex, unique business challenges.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 3. Simple Contact Placeholder (Restored) -->
+            <section id="contact" class="mt-20 py-12 bg-secondary-dark rounded-xl shadow-inner shadow-black/50 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">
+                    Ready to Build?
+                </h2>
+                <p class="text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
+                    Let's discuss how our expertise in SaaS development can transform your idea into a successful product.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <!-- Email Contact Link -->
+                    <a href="mailto:info@orionventuresltd.com" class="inline-block px-8 py-3 text-base font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300">
+                        Email Us Today
+                    </a>
+                    <!-- Placeholder Phone/Link -->
+                    <a href="#" class="inline-block px-8 py-3 text-base font-semibold text-accent-light border border-accent-light rounded-lg hover:bg-accent-light hover:text-primary-dark transition duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 py-8 border-t border-secondary-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            &copy; 2025 Orion Ventures Ltd. All rights reserved. | Building the next generation of SaaS.
+        </div>
+    </footer>
+
+</body>
+</html>
