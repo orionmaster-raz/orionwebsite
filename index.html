@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion Ventures Ltd. | Innovative SaaS Products</title>
+    <title>Orion Venture: We Build. We Scale. We Conquer.</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -13,123 +13,183 @@
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
         }
+
+        /* Custom scrollbar for dark theme aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1; /* accent-main (indigo-500) */
+            border-radius: 4px;
+        }
     </style>
     <script>
+        // Custom Tailwind Configuration
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary-dark': '#0f172a', /* slate-900 */
-                        'secondary-dark': '#1e293b', /* slate-800 */
-                        'accent-light': '#a5b4fc', /* indigo-300 */
-                        'accent-main': '#6366f1', /* indigo-500 */
+                        'primary-dark': '#0f172a', /* slate-900 (Your specified background) */
+                        'secondary-dark': '#1e293b', /* slate-800 (Card/Section background) */
+                        'accent-light': '#a5b4fc', /* indigo-300 (Subtle highlight) */
+                        'accent-main': '#6366f1', /* indigo-500 (Primary action color) */
+                        'accent-hover': '#4f46e5', /* indigo-600 */
+                        'accent-contrast': '#38bdf8', /* sky-400 (For light differentiation) */
                     }
                 }
             }
         }
     </script>
-    <!-- Removed LLM and Firebase logic for a cleaner, simpler landing page -->
 </head>
 <body class="bg-primary-dark text-gray-100 antialiased">
 
-    <!-- Header / Navigation (Minimal) -->
+    <!-- Header / Navigation -->
     <header class="py-4 border-b border-secondary-dark sticky top-0 bg-primary-dark/95 z-10 backdrop-blur-sm">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <div class="text-2xl font-extrabold tracking-tight text-accent-light">
-                Orion<span class="text-accent-main">Ventures</span>
-            </div>
-            <!-- Minimal Navigation (Placeholder for future pages) -->
-            <nav class="space-x-4 text-sm hidden sm:block">
-                <a href="#services" class="hover:text-accent-main transition duration-150">Services</a>
-                <a href="#contact" class="hover:text-accent-main transition duration-150">Contact</a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 group">
+                <!-- Logo Placeholder (Orion Constellation Icon) -->
+                <div class="w-8 h-8 rounded-full bg-accent-main flex items-center justify-center text-white border-2 border-accent-light transition-colors duration-300 group-hover:bg-accent-hover">
+                    <!-- Simple SVG approximation of the constellation/star theme -->
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.75L12 5.25M7.5 14.25L16.5 9.75M7.5 9.75L16.5 14.25M12 5.25a.75.75 0 110-1.5.75.75 0 010 1.5zM16.5 9.75a.75.75 0 110-1.5.75.75 0 010 1.5zM7.5 14.25a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5zM7.5 9.75a.75.75 0 110-1.5.75.75 0 010 1.5zM16.5 14.25a.75.75 0 110-1.5.75.75 0 010 1.5z"></path>
+                    </svg>
+                </div>
+                <div class="text-2xl font-extrabold tracking-tight text-accent-light">
+                    Orion<span class="text-accent-main">Venture</span>
+                </div>
+            </a>
+            <!-- Minimal Navigation -->
+            <nav class="space-x-6 text-sm hidden sm:block">
+                <a href="#model" class="hover:text-accent-main transition duration-150">Our Strategy</a>
+                <a href="#products" class="hover:text-accent-main transition duration-150">Products</a>
+                <a href="#join" class="px-3 py-1 bg-accent-main/20 text-accent-light rounded-md border border-accent-main/50 hover:bg-accent-main/30 transition duration-150">
+                    Contact Us
+                </a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content Area -->
     <main class="py-16 sm:py-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- 1. Hero Section -->
-            <section class="text-center mb-20">
-                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-light">
-                    Building the Future of SaaS.
+            <section class="text-center mb-24">
+                <h1 class="text-6xl sm:text-8xl font-extrabold leading-tight mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-light">
+                    We Build. We Scale. We Conquer.
                 </h1>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-                    Orion Ventures Ltd. crafts intelligent, scalable software solutions—from powerful Chrome Extensions to advanced Chatbots and proprietary Web Services—designed to automate and elevate your business operations.
+                <p class="text-xl text-gray-400 max-w-4xl mx-auto mb-12">
+                    Orion Venture specializes in identifying high-value market problems and developing best-in-class solutions entirely in-house. Our scaling strategy is aggressive and fully driven by the market potential.
                 </p>
 
                 <!-- Call to Action -->
-                <a href="#contact" class="inline-block px-10 py-4 text-lg font-bold text-white bg-accent-main rounded-xl shadow-lg shadow-indigo-500/50 hover:bg-indigo-600 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
-                    Start Your Project
+                <a href="#join" class="inline-flex items-center space-x-2 px-10 py-4 text-lg font-bold text-white bg-accent-main rounded-xl shadow-2xl shadow-indigo-500/50 hover:bg-accent-hover transition duration-300 transform hover:scale-[1.01] active:scale-[0.98] border border-accent-main">
+                    <span>Explore Opportunities</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </a>
             </section>
 
-            <!-- 2. Services / Products Overview -->
-            <section id="services" class="pt-16 pb-12">
-                <h2 class="text-4xl font-bold text-center mb-12 text-accent-light">
-                    Our Core Offerings
+            <!-- 2. Our Strategic Approach -->
+            <section id="model" class="pt-16 pb-20">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-contrast">
+                    Our Strategic Approach: Problem-First Solutions
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                    <!-- Product Type 1: Web Services Apps -->
-                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
-                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Web Services & APIs</h3>
-                        <p class="text-gray-400 text-sm">Scalable backend systems and custom APIs powering modern web applications globally.</p>
+                <div class="relative max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+                        
+                        <!-- Box 1: Problem Discovery & Development -->
+                        <div class="relative p-8 bg-secondary-dark rounded-xl shadow-lg border border-accent-main/30 hover:shadow-indigo-500/20 transition duration-300">
+                            <span class="text-5xl font-extrabold text-accent-main mb-4 block">1.</span>
+                            <h3 class="text-2xl font-semibold mb-3 text-white">Find the Problem, Build the Solution</h3>
+                            <p class="text-gray-400 text-lg">
+                                We operate as a focused product studio, actively identifying critical inefficiencies in the SaaS, Fintech, Web, and Extension markets. We design, build, and validate the Minimum Viable Product (MVP) entirely in-house using our core team, ensuring product quality and market fit from day one.
+                            </p>
+                            <p class="mt-4 text-sm font-bold text-accent-light">Core Focus: Internal Development & Validation</p>
+                        </div>
+
+                        <!-- Box 2: Market-Driven Scaling Strategy -->
+                        <div class="relative p-8 bg-secondary-dark rounded-xl shadow-lg border border-accent-main/30 hover:shadow-indigo-500/20 transition duration-300">
+                            <span class="text-5xl font-extrabold text-accent-main mb-4 block">2.</span>
+                            <h3 class="text-2xl font-semibold mb-3 text-white">Scale by Opportunity</h3>
+                            <p class="text-gray-400 text-lg">
+                                Our scaling model is determined exclusively by market size. If a solution targets a vast, high-growth market, our internal resources are fully committed to leading rapid expansion and global market management. All growth is driven by the core Orion team.
+                            </p>
+                            <p class="mt-4 text-sm font-bold text-accent-light">Core Focus: Internal Scalability for Maximum Market Capture</p>
+                        </div>
                     </div>
-
-                    <!-- Product Type 2: Chrome Extensions -->
-                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
-                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 10A2 2 0 007.25 8h-4A2 2 0 001.25 10L.75 17M14.75 17L14.25 10A2 2 0 0012.25 8h-4A2 2 0 006.25 10L5.75 17M19.75 17L19.25 10A2 2 0 0017.25 8h-4A2 2 0 0011.25 10L10.75 17"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Browser Extensions</h3>
-                        <p class="text-gray-400 text-sm">Enhancing productivity and integrating tools directly into user workflows.</p>
-                    </div>
-
-                    <!-- Product Type 3: Chatbots & AI -->
-                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
-                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.676A9.95 9.95 0 0112 3c4.97 0 9 3.582 9 8z"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Intelligent Chatbots</h3>
-                        <p class="text-gray-400 text-sm">Automating customer support, lead generation, and internal knowledge access with AI.</p>
-                    </div>
-
-                    <!-- Product Type 4: Custom Software -->
-                    <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl border border-secondary-dark hover:border-accent-main transition duration-300">
-                        <svg class="w-10 h-10 mb-4 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 012-2m-2 2a2 2 0 002 2m7-2a2 2 0 012-2m-2 2a2 2 0 002 2m-4-2h-4"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Bespoke Applications</h3>
-                        <p class="text-gray-400 text-sm">Developing tailored software to solve complex, unique business challenges.</p>
-                    </div>
-
                 </div>
             </section>
 
-            <!-- 3. Simple Contact Placeholder (Restored) -->
-            <section id="contact" class="mt-20 py-12 bg-secondary-dark rounded-xl shadow-inner shadow-black/50 text-center">
-                <h2 class="text-3xl font-bold mb-4 text-white">
-                    Ready to Build?
+
+            <!-- 3. Product Focus -->
+            <section id="products" class="pt-20 pb-16">
+                <h2 class="text-4xl font-bold text-center mb-16 text-accent-contrast">
+                    What We Build
                 </h2>
-                <p class="text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
-                    Let's discuss how our expertise in SaaS development can transform your idea into a successful product.
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <!-- Left Column: Core Software Products -->
+                    <div class="space-y-6">
+                        <div class="bg-secondary-dark p-8 rounded-xl shadow-xl border-t-4 border-accent-main">
+                            <h3 class="text-3xl font-bold text-white mb-4 flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-accent-main" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 10A2 2 0 007.25 8h-4A2 2 0 001.25 10L.75 17M14.75 17L14.25 10A2 2 0 0012.25 8h-4A2 2 0 006.25 10L5.75 17M19.75 17L19.25 10A2 2 0 0017.25 8h-4A2 2 0 0011.25 10L10.75 17"></path></svg>
+                                <span>SaaS & Fintech Platforms</span>
+                            </h3>
+                            <p class="text-gray-400 text-lg">We engineer resilient B2B and consumer SaaS applications, focusing particularly on complex, compliance-heavy sectors like **Fintech** to create high-margin, scalable recurring revenue models.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Niche Software Products -->
+                    <div class="space-y-6">
+                        <div class="bg-secondary-dark p-8 rounded-xl shadow-xl border-t-4 border-accent-contrast">
+                            <h3 class="text-3xl font-bold text-white mb-4 flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-accent-contrast" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9-3 4.03-3 9 1.343 9 3 9z"></path></svg>
+                                <span>Web & Chrome Extensions</span>
+                            </h3>
+                            <p class="text-gray-400 text-lg">Targeting highly specific user pain points with hyper-efficient tools. This includes web applications with strong network effects and productivity-boosting browser extensions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Calls to Action (Connect With Us - Consolidated Email Option) -->
+            <section id="join" class="mt-20 pt-16 pb-16 border-t border-secondary-dark text-center">
+                <h2 class="text-4xl font-bold text-center mb-8 text-accent-light">
+                    Connect With Us
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                    Whether you are a visionary entrepreneur looking for your next venture or a strategic partner ready to invest in de-risked innovation, we want to hear from you.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <!-- Email Contact Link -->
-                    <a href="mailto:info@orionventuresltd.com" class="inline-block px-8 py-3 text-base font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300">
-                        Email Us Today
-                    </a>
-                    <!-- Placeholder Phone/Link -->
-                    <a href="#" class="inline-block px-8 py-3 text-base font-semibold text-accent-light border border-accent-light rounded-lg hover:bg-accent-light hover:text-primary-dark transition duration-300">
-                        Learn More
-                    </a>
-                </div>
-            </section>
 
+                <a href="mailto:info@orionventuresltd.com?subject=Orion%20Venture%20Inquiry" class="inline-flex items-center space-x-2 px-10 py-4 text-xl font-bold text-white bg-accent-main rounded-xl shadow-2xl shadow-indigo-500/50 hover:bg-accent-hover transition duration-300 transform hover:scale-[1.01] active:scale-[0.98] border border-accent-main">
+                    <span>Email Us Today</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-6 9.75h4.25a2 2 0 002-2V7.75a2 2 0 00-2-2H4.75a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </a>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-20 py-8 border-t border-secondary-dark">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-            &copy; 2025 Orion Ventures Ltd. All rights reserved. | Building the next generation of SaaS.
+    <footer class="mt-20 py-10 border-t border-secondary-dark bg-secondary-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
+                <p class="text-gray-400 font-semibold">&copy; 2025 Orion Venture. All rights reserved.</p>
+                <span class="hidden sm:inline text-gray-600">|</span>
+                <a href="mailto:info@orionventuresltd.com" class="text-accent-main hover:text-accent-light transition">info@orionventuresltd.com</a>
+            </div>
+            
+            <div class="space-x-4">
+                <a href="#" class="text-gray-500 hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="text-gray-500 hover:text-white transition">Terms of Service</a>
+                <a href="#" class="text-gray-500 hover:text-white transition">LinkedIn</a>
+            </div>
+            
+            <p class="mt-4 text-xs text-gray-600">Built with precision. Engineered for scale.</p>
         </div>
     </footer>
 
