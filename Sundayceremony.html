@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="google-adsense-account" content="ca-pub-3024197688375764" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sunday Christian Ceremony</title>
-  <meta name="description" content="A gentle Sunday ceremony popup — calm, simple, and consistent." />
+  <title>Sunday Christian Sermon</title>
+  <meta name="description" content="A gentle Sunday sermon popup — calm, simple, and consistent." />
 
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -15,7 +15,7 @@
       --ink:#1e1e1e;
       --muted:#5f5f5f;
       --line:rgba(0,0,0,.12);
-      --accent:#9b7a3c; /* warm gold */
+      --accent:#9b7a3c;
       --radius:14px;
       --max:900px;
     }
@@ -31,8 +31,6 @@
       color:var(--ink);
       line-height:1.65;
     }
-
-    a{color:inherit}
 
     .wrap{
       max-width:var(--max);
@@ -65,7 +63,6 @@
     header h1{
       margin:0;
       font-size:28px;
-      letter-spacing:.2px;
     }
 
     header p{
@@ -84,8 +81,8 @@
       font-size:16px;
       color:#6b5a3a;
       margin:0 0 14px;
-      letter-spacing:.2px;
     }
+
     .verse span{
       display:block;
       font-style: normal;
@@ -98,7 +95,6 @@
       font-size:36px;
       font-weight:600;
       margin:0 0 12px;
-      letter-spacing:.3px;
     }
 
     .hero p{
@@ -116,7 +112,6 @@
       color:var(--accent);
       text-decoration:none;
       font-size:15px;
-      transition: background .15s ease, color .15s ease;
     }
 
     .btn:hover{
@@ -170,7 +165,6 @@
     .feature h4{
       margin:0 0 6px;
       font-size:18px;
-      font-weight:600;
     }
 
     .feature p{
@@ -179,6 +173,7 @@
       color:var(--muted);
     }
 
+    /* Reviews layout (reusing screenshots grid) */
     .screens{
       display:grid;
       grid-template-columns: repeat(3,1fr);
@@ -191,25 +186,20 @@
     }
 
     .shot{
-      min-height:140px;
-      border:1px dashed var(--line);
+      padding:18px;
+      border:1px solid var(--line);
       border-radius:var(--radius);
       background:rgba(255,255,255,.6);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      font-size:15px;
+      color:var(--ink);
+      text-align:left;
+    }
+
+    .shot span{
+      display:block;
+      margin-top:10px;
       font-size:13px;
       color:var(--muted);
-      padding:12px;
-      text-align:center;
-      overflow:hidden;
-    }
-    .shot img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      border-radius:12px;
     }
 
     footer{
@@ -229,88 +219,93 @@
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <header>
-      <div class="mark">SC</div>
-      <h1>Sunday Christian Ceremony</h1>
-      <p>A gentle weekly ritual in Chrome</p>
-    </header>
+<header>
+  <div class="mark">SS</div>
+  <h1>Sunday Christian Sermon</h1>
+  <p>A gentle weekly pause in Chrome</p>
+</header>
 
-    <main class="hero">
-      <p class="verse">
-        “Be still, and know that I am God.”
-        <span>— Psalm 46:10</span>
-      </p>
+<main class="hero">
+  <p class="verse">
+    “Be still, and know that I am God.”
+    <span>— Psalm 46:10</span>
+  </p>
 
-      <h2>Begin Sunday with stillness.</h2>
-      <p>
-        A simple Chrome extension that opens a calm Sunday ceremony —
-        helping you pause, reflect, and enter the week with intention.
-      </p>
+  <h2>Begin Sunday with stillness.</h2>
+  <p>
+    A simple Chrome extension that opens a calm Sunday sermon —
+    helping you pause, reflect, and enter the week with intention.
+  </p>
 
-      <a class="btn" target="_blank" rel="noopener"
-         href="https://chromewebstore.google.com/detail/sunday-christian-ceremony/njlmnikmdjlbjepiodcmimppgiiknjgg?hl=en">
-        Add to Chrome
-      </a>
-    </main>
+  <a class="btn" target="_blank" rel="noopener"
+     href="https://chromewebstore.google.com/detail/sunday-christian-ceremony/njlmnikmdjlbjepiodcmimppgiiknjgg?hl=en">
+    Add to Chrome
+  </a>
+</main>
 
-    <div class="divider"></div>
+<div class="divider"></div>
 
-    <section class="section">
-      <h3>What it offers</h3>
-      <p>A quiet reminder. No noise. No pressure. Just a moment set aside.</p>
+<section class="section">
+  <h3>What it offers</h3>
+  <p>A quiet reminder. No noise. No pressure. Just a moment set aside.</p>
 
-      <div class="features">
-        <div class="feature">
-          <h4>Weekly ceremony</h4>
-          <p>Appears every Sunday to support consistency and reflection.</p>
-        </div>
-        <div class="feature">
-          <h4>Minimal by design</h4>
-          <p>No dashboards or distractions — only the ceremony itself.</p>
-        </div>
-        <div class="feature">
-          <h4>Respectful & calm</h4>
-          <p>Created to feel gentle, familiar, and unintrusive.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="section">
-      <h3>Screenshots</h3>
-      <p>Replace these placeholders with images from the extension.</p>
-
-      <div class="screens">
-        <div class="shot">
-          Sunday popup<br/>
-          <!-- <img src="https://yourdomain.com/s1.png" alt="Sunday popup screenshot" /> -->
-        </div>
-        <div class="shot">
-          Ceremony content<br/>
-          <!-- <img src="https://yourdomain.com/s2.png" alt="Ceremony content screenshot" /> -->
-        </div>
-        <div class="shot">
-          Extension view<br/>
-          <!-- <img src="https://yourdomain.com/s3.png" alt="Extension view screenshot" /> -->
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Sunday Christian Ceremony ·
-      <a target="_blank" rel="noopener"
-         href="https://chromewebstore.google.com/detail/sunday-christian-ceremony/njlmnikmdjlbjepiodcmimppgiiknjgg?hl=en">
-        Chrome Web Store
-      </a>
-    </footer>
-
+  <div class="features">
+    <div class="feature">
+      <h4>Weekly sermon</h4>
+      <p>Appears every Sunday to support consistency and reflection.</p>
+    </div>
+    <div class="feature">
+      <h4>Minimal by design</h4>
+      <p>No dashboards or distractions — only the sermon itself.</p>
+    </div>
+    <div class="feature">
+      <h4>Respectful & calm</h4>
+      <p>Created to feel gentle, familiar, and unintrusive.</p>
+    </div>
   </div>
+</section>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<div class="divider"></div>
+
+<section class="section">
+  <h3>Reviews</h3>
+  <p>Words from people who made this part of their Sunday routine.</p>
+
+  <div class="screens">
+    <div class="shot">
+      “This extension gives me a peaceful moment before church.
+      It’s simple, thoughtful, and never distracting.”
+      <span>— Marco De Luca </span>
+    </div>
+
+    <div class="shot">
+      “I appreciate how quiet and respectful this feels.
+      It helps me pause and reflect without trying to do too much.”
+      <span>— Miguel Ángel Fernández</span>
+    </div>
+
+    <div class="shot">
+      “Exactly what I was looking for.
+      A gentle reminder of faith to start my Sunday calmly.”
+      <span>— Alexandros Ioannidis</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="y"></span> Sunday Christian Sermon ·
+  <a target="_blank" rel="noopener"
+     href="https://chromewebstore.google.com/detail/sunday-christian-ceremony/njlmnikmdjlbjepiodcmimppgiiknjgg?hl=en">
+    Chrome Web Store
+  </a>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
