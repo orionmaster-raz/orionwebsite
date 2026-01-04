@@ -44,15 +44,32 @@
     header{
       display:flex; justify-content:space-between; align-items:center;
       gap:14px; flex-wrap:wrap;
+      padding: 12px 0;
+      margin-bottom: 8px;
     }
     .brand{
       display:flex; align-items:center; gap:12px; text-decoration:none;
+      transition: transform 0.2s ease;
     }
+    .brand:hover{transform: translateX(-2px);}
     .brand img{
-      width:38px; height:38px; border-radius:12px;
+      width:42px; height:42px; border-radius:12px;
       background:#fff; border:1px solid var(--line);
+      box-shadow: 0 2px 8px rgba(107,99,255,.15);
     }
-    .brand strong{font-size:15px}
+    .brand strong{font-size:16px; font-weight:700; color:var(--ink);}
+    .nav-link{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 12px;
+      border-radius:8px;
+      transition:all 0.2s ease;
+    }
+    .nav-link:hover{
+      color:var(--accent);
+      background:var(--soft);
+    }
 
     .hero{
       margin-top:22px;
@@ -99,20 +116,33 @@
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
     .btn{
       appearance:none; border:0; cursor:pointer;
-      padding:12px 16px;
+      padding:14px 24px;
       border-radius:14px;
-      font-weight:800;
+      font-weight:700;
+      font-size:15px;
       text-decoration:none;
       display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      transition:all 0.3s ease;
     }
     .btnPrimary{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#fff;
       box-shadow:0 14px 26px rgba(107,99,255,.24);
     }
+    .btnPrimary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 32px rgba(107,99,255,.32);
+    }
     .btnGhost{
       background:#fff;
       border:1px solid var(--line);
+      color:var(--ink);
+    }
+    .btnGhost:hover{
+      background:var(--soft);
+      border-color:var(--accent);
+      color:var(--accent);
     }
 
     .right{padding:16px; display:flex; flex-direction:column; gap:10px}
@@ -147,10 +177,80 @@
       border:1px solid var(--line);
       background:#fff;
       border-radius:16px;
-      padding:14px;
+      padding:20px;
+      transition:all 0.3s ease;
+      position:relative;
+      overflow:hidden;
     }
-    .benefit b{display:block; margin-bottom:4px}
-    .benefit p{margin:0; color:var(--muted); font-size:14px}
+    .benefit::before{
+      content:'';
+      position:absolute;
+      top:0; left:0;
+      width:4px;
+      height:100%;
+      background:linear-gradient(180deg,var(--accent),var(--accent2));
+      opacity:0;
+      transition:opacity 0.3s ease;
+    }
+    .benefit:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 20px rgba(107,99,255,.12);
+      border-color:var(--accent);
+    }
+    .benefit:hover::before{opacity:1;}
+    .benefit b{
+      display:block;
+      margin-bottom:6px;
+      font-size:15px;
+      color:var(--ink);
+    }
+    .benefit p{margin:0; color:var(--muted); font-size:14px; line-height:1.5;}
+    
+    .features-section{
+      margin-top:48px;
+      padding-top:48px;
+      border-top:1px solid var(--line);
+    }
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:20px;
+      margin-top:24px;
+    }
+    .feature-card{
+      padding:24px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      transition:all 0.3s ease;
+    }
+    .feature-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(107,99,255,.1);
+    }
+    .feature-icon{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      margin-bottom:16px;
+      box-shadow:0 4px 12px rgba(107,99,255,.2);
+    }
+    .feature-card h3{
+      margin:0 0 8px;
+      font-size:18px;
+      color:var(--ink);
+    }
+    .feature-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
 
     footer{
       margin-top:26px;
@@ -166,10 +266,11 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <img src="assets/logo.png" alt="DataViz AI logo">
         <strong>DataViz AI</strong>
       </a>
+      <a class="nav-link" href="index.html">← Back to Home</a>
     </header>
 
     <main class="hero">
@@ -184,23 +285,27 @@
 
         <div class="ctaRow">
           <a class="btn btnPrimary" id="btnStoreTop" href="#" target="_blank" rel="noopener">
-            Get it on Chrome Web Store
+            <span>Get it on Chrome Web Store</span>
+            <span>→</span>
           </a>
-          <a class="btn btnGhost" href="#demo">See it in action</a>
+          <a class="btn btnGhost" href="#demo">
+            <span>See it in action</span>
+            <span>↓</span>
+          </a>
         </div>
 
         <div class="benefits">
           <div class="benefit">
-            <b>Save time</b>
-            <p>Go from chart → CSV in seconds.</p>
+            <b>⚡ Save time</b>
+            <p>Go from chart → CSV in seconds. No more manual data entry.</p>
           </div>
           <div class="benefit">
-            <b>Fewer errors</b>
-            <p>No manual retyping of numbers.</p>
+            <b>✓ Fewer errors</b>
+            <p>No manual retyping of numbers. AI-powered accuracy.</p>
           </div>
           <div class="benefit">
-            <b>Works anywhere</b>
-            <p>Dashboards, PDFs, screenshots.</p>
+            <b>🌐 Works anywhere</b>
+            <p>Dashboards, PDFs, screenshots, and more.</p>
           </div>
         </div>
       </section>
@@ -219,6 +324,59 @@
         </div>
       </aside>
     </main>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+      <h2 style="font-size:32px; font-weight:700; margin:0 0 12px; color:var(--ink); text-align:center;">How It Works</h2>
+      <p style="text-align:center; color:var(--muted); font-size:16px; margin:0 0 32px; max-width:600px; margin-left:auto; margin-right:auto;">
+        Extract data from any visual source with just a few clicks
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📸</div>
+          <h3>Capture</h3>
+          <p>Select any chart, table, or data visualization on the web or in a PDF.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Extract</h3>
+          <p>Our AI analyzes the image and extracts the underlying data automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Export</h3>
+          <p>Download as CSV or open directly in Excel or Google Sheets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section style="margin-top:48px; padding-top:48px; border-top:1px solid var(--line);">
+      <h2 style="font-size:28px; font-weight:700; margin:0 0 24px; color:var(--ink);">Perfect For</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+        <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
+          <div style="font-size:20px; margin-bottom:8px;">📈</div>
+          <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Analysts</div>
+          <div style="font-size:13px; color:var(--muted);">Extract data from research reports and dashboards</div>
+        </div>
+        <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
+          <div style="font-size:20px; margin-bottom:8px;">💼</div>
+          <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Business Users</div>
+          <div style="font-size:13px; color:var(--muted);">Convert PDF charts into editable spreadsheets</div>
+        </div>
+        <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
+          <div style="font-size:20px; margin-bottom:8px;">🎓</div>
+          <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Students</div>
+          <div style="font-size:13px; color:var(--muted);">Extract data from academic papers and presentations</div>
+        </div>
+        <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
+          <div style="font-size:20px; margin-bottom:8px;">🔬</div>
+          <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Researchers</div>
+          <div style="font-size:13px; color:var(--muted);">Quickly digitize data from published studies</div>
+        </div>
+      </div>
+    </section>
 
     <!-- AD SECTION -->
     <div style="max-width: var(--max); margin: 32px auto 0; padding: 0 18px;">
