@@ -223,8 +223,60 @@
 </footer>
 
 <!-- Accessibility Widget -->
+<div id="a11y-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000; font-family: system-ui, sans-serif;">
+  <button id="a11y-toggle" style="width: 60px; height: 60px; border-radius: 50%; background: #6366f1; border: none; color: white; font-size: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.2s;" aria-label="Accessibility Options" title="Accessibility Options">♿</button>
+  <div id="a11y-menu" style="display: none; position: absolute; bottom: 70px; right: 0; background: #1e293b; border: 1px solid #6366f1; border-radius: 12px; padding: 16px; min-width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+    <div style="color: white; font-weight: 600; margin-bottom: 12px; font-size: 14px;">Accessibility Options</div>
+    <button class="a11y-btn" data-action="increase-text" style="width: 100%; padding: 10px; margin: 4px 0; background: #6366f1; border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 13px;">Increase Text Size</button>
+    <button class="a11y-btn" data-action="decrease-text" style="width: 100%; padding: 10px; margin: 4px 0; background: #6366f1; border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 13px;">Decrease Text Size</button>
+    <button class="a11y-btn" data-action="high-contrast" style="width: 100%; padding: 10px; margin: 4px 0; background: #6366f1; border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 13px;">High Contrast</button>
+    <button class="a11y-btn" data-action="reset" style="width: 100%; padding: 10px; margin: 4px 0; background: #4f46e5; border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 13px;">Reset</button>
+  </div>
+</div>
 <script>
-    (function(){ var s = document.createElement('script'); s.src = 'https://cdn.accessi.be/accessibe-js.js'; s.setAttribute('data-account-id', 'accessibe'); s.setAttribute('data-domain', 'orionventuresltd.com'); s.async = true; document.getElementsByTagName('head')[0].appendChild(s); })();
+(function() {
+  const widget = document.getElementById('a11y-widget');
+  const toggle = document.getElementById('a11y-toggle');
+  const menu = document.getElementById('a11y-menu');
+  let fontSize = 100;
+  
+  toggle.addEventListener('click', function() {
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+  });
+  
+  document.querySelectorAll('.a11y-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const action = this.getAttribute('data-action');
+      if (action === 'increase-text') {
+        fontSize = Math.min(fontSize + 10, 150);
+        document.body.style.fontSize = fontSize + '%';
+      } else if (action === 'decrease-text') {
+        fontSize = Math.max(fontSize - 10, 80);
+        document.body.style.fontSize = fontSize + '%';
+      } else if (action === 'high-contrast') {
+        document.body.classList.toggle('high-contrast');
+        if (document.body.classList.contains('high-contrast')) {
+          document.body.style.filter = 'contrast(1.2)';
+        } else {
+          document.body.style.filter = '';
+        }
+      } else if (action === 'reset') {
+        fontSize = 100;
+        document.body.style.fontSize = '';
+        document.body.style.filter = '';
+        document.body.classList.remove('high-contrast');
+      }
+      menu.style.display = 'none';
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!widget.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+})();
 </script>
 
 <script>
