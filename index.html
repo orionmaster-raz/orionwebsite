@@ -19,6 +19,20 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .portfolio-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        .portfolio-card:nth-child(2) {
+            animation-delay: -2s;
+        }
+        .portfolio-card:nth-child(3) {
+            animation-delay: -4s;
+        }
     </style>
 
     <!-- Tailwind Config -->
@@ -56,17 +70,7 @@
 
         <nav class="space-x-6 text-sm hidden sm:block">
             <a href="#model" class="hover:text-accent-main">Our Strategy</a>
-            <a href="#products" class="hover:text-accent-main">Products</a>
-
-            <!-- NEW LINK -->
-            <a href="Sundayceremony.html" class="hover:text-accent-main">
-                Sunday Ceremony
-            </a>
-
-            <a href="IndieShuffle.html" class="hover:text-accent-main">
-                IndieShuffle
-            </a>
-
+            <a href="#products" class="hover:text-accent-main">Our Portfolio</a>
             <a href="#join"
                class="px-3 py-1 bg-accent-main/20 text-accent-light rounded-md border border-accent-main/50 hover:bg-accent-main/30">
                 Contact Us
@@ -120,42 +124,60 @@
         </div>
     </section>
 
-    <!-- PRODUCTS -->
+    <!-- PORTFOLIO -->
     <section id="products" class="pb-24">
         <h2 class="text-4xl font-bold text-center mb-16 text-accent-contrast">
-            What We Build
+            Our Portfolio
         </h2>
 
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <!-- SAAS -->
-            <div class="bg-secondary-dark p-8 rounded-xl border-t-4 border-accent-main">
-                <h3 class="text-3xl font-bold mb-4">SaaS & Fintech</h3>
-                <p class="text-gray-400 text-lg">
-                    High-margin, scalable platforms with compliance and depth.
-                </p>
-            </div>
-
-            <!-- EXTENSIONS -->
-            <div class="bg-secondary-dark p-8 rounded-xl border-t-4 border-accent-contrast">
-                <h3 class="text-3xl font-bold mb-4">Web & Chrome Extensions</h3>
-                <p class="text-gray-400 text-lg">
-                    Focused tools solving specific user pain points.
-                </p>
-
-                <div class="mt-6 flex flex-col space-y-3">
-                    <a href="IndieShuffle.html"
-                       class="inline-flex items-center px-4 py-2 rounded-lg bg-accent-main text-white hover:bg-accent-hover">
-                        View IndieShuffle →
-                    </a>
-
-                    <!-- NEW CTA -->
-                    <a href="Sundayceremony.html"
-                       class="inline-flex items-center px-4 py-2 rounded-lg bg-white/5 text-accent-light border border-accent-light/30 hover:bg-white/10">
-                        View Sunday Ceremony →
-                    </a>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- DataViz AI -->
+            <a href="DataVizAi.html" class="portfolio-card group">
+                <div class="bg-secondary-dark p-8 rounded-xl border border-accent-main/30 hover:border-accent-main/60 transition-all duration-300 hover:shadow-lg hover:shadow-accent-main/20 h-full flex flex-col">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-main to-accent-contrast flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-accent-light transition-colors">DataViz AI</h3>
+                    <p class="text-gray-400 text-sm flex-grow">
+                        Extract data from charts, tables, and PDFs into CSV — in seconds.
+                    </p>
+                    <span class="text-accent-main text-sm mt-4 inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        View Project →
+                    </span>
                 </div>
-            </div>
+            </a>
+
+            <!-- IndieShuffle -->
+            <a href="IndieShuffle.html" class="portfolio-card group">
+                <div class="bg-secondary-dark p-8 rounded-xl border border-accent-contrast/30 hover:border-accent-contrast/60 transition-all duration-300 hover:shadow-lg hover:shadow-accent-contrast/20 h-full flex flex-col">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-contrast to-accent-main flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">🎵</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-accent-contrast transition-colors">IndieShuffle</h3>
+                    <p class="text-gray-400 text-sm flex-grow">
+                        10 fresh indie tracks from around the world every day — right in your browser.
+                    </p>
+                    <span class="text-accent-contrast text-sm mt-4 inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        View Project →
+                    </span>
+                </div>
+            </a>
+
+            <!-- Sunday Sermon -->
+            <a href="Sundayceremony.html" class="portfolio-card group">
+                <div class="bg-secondary-dark p-8 rounded-xl border border-accent-light/30 hover:border-accent-light/60 transition-all duration-300 hover:shadow-lg hover:shadow-accent-light/20 h-full flex flex-col">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-light to-accent-main flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">⛪</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-accent-light transition-colors">Sunday Sermon</h3>
+                    <p class="text-gray-400 text-sm flex-grow">
+                        A gentle Sunday sermon popup — calm, simple, and consistent.
+                    </p>
+                    <span class="text-accent-light text-sm mt-4 inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        View Project →
+                    </span>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -179,15 +201,36 @@
 
 <!-- FOOTER -->
 <footer class="mt-20 py-10 border-t border-secondary-dark bg-secondary-dark/50 text-center text-sm text-gray-500">
-    <p class="font-semibold text-gray-400">
-        © 2025 Orion Venture. All rights reserved.
-    </p>
-    <p class="mt-2">
-        <a href="mailto:info@orionventuresltd.com" class="text-accent-main hover:text-accent-light">
-            info@orionventuresltd.com
-        </a>
-    </p>
+    <div class="max-w-4xl mx-auto px-4">
+        <p class="font-semibold text-gray-400 mb-2">
+            © <span id="current-year">2025</span> Orion Ventures Ltd. All rights reserved.
+        </p>
+        <p class="text-xs text-gray-500 mb-3">
+            Orion Ventures Ltd. is incorporated in Delaware, United States.
+        </p>
+        <p class="mt-3 mb-2">
+            <a href="mailto:info@orionventuresltd.com" class="text-accent-main hover:text-accent-light">
+                info@orionventuresltd.com
+            </a>
+        </p>
+        <p class="text-xs text-gray-600 mt-4">
+            <a href="index.html" class="hover:text-accent-main">Home</a> | 
+            <a href="DataVizAi.html" class="hover:text-accent-main">DataViz AI</a> | 
+            <a href="IndieShuffle.html" class="hover:text-accent-main">IndieShuffle</a> | 
+            <a href="Sundayceremony.html" class="hover:text-accent-main">Sunday Sermon</a>
+        </p>
+    </div>
 </footer>
+
+<!-- Accessibility Widget -->
+<script>
+    (function(){ var s = document.createElement('script'); s.src = 'https://cdn.accessi.be/accessibe-js.js'; s.setAttribute('data-account-id', 'accessibe'); s.setAttribute('data-domain', 'orionventuresltd.com'); s.async = true; document.getElementsByTagName('head')[0].appendChild(s); })();
+</script>
+
+<script>
+    // Set current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
