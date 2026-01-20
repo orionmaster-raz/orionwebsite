@@ -284,7 +284,7 @@
         </p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary" id="btnStoreTop" href="#" target="_blank" rel="noopener">
+          <a class="btn btnPrimary" id="btnStoreTop" href="https://chromewebstore.google.com/detail/dataviz-ai-table-to-excel/defpddnlapbfilljlafahedpopojjohj?hl=en-US&utm_source=ext_sidebar" target="_blank" rel="noopener">
             <span>Get it on Chrome Web Store</span>
             <span>→</span>
           </a>
@@ -472,16 +472,11 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // 🔗 PUT YOUR CHROME WEB STORE URL HERE
-    const CHROME_WEB_STORE_URL = "#";
+    // Chrome Web Store URL
+    const CHROME_WEB_STORE_URL = "https://chromewebstore.google.com/detail/dataviz-ai-table-to-excel/defpddnlapbfilljlafahedpopojjohj?hl=en-US&utm_source=ext_sidebar";
 
     document.getElementById('btnStoreTop').addEventListener('click', e => {
-      if (CHROME_WEB_STORE_URL === "#") {
-        e.preventDefault();
-        alert("Set your Chrome Web Store URL in index.html");
-      } else {
-        e.target.href = CHROME_WEB_STORE_URL;
-      }
+      e.target.href = CHROME_WEB_STORE_URL;
     });
 
     // 🎥 Video loop logic
