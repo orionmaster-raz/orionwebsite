@@ -3,10 +3,90 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DataViz AI — Chart to CSV in one click</title>
+  <title>Chart to CSV in Seconds – DataViz AI</title>
 
-  <meta name="description" content="Stop redrawing charts. Extract data from charts, tables, screenshots, and PDFs into CSV — in seconds." />
+  <meta name="description" content="Extract data from charts, PDFs, and screenshots instantly with DataViz AI. Convert visuals to CSV or Excel in seconds with AI." />
   <meta name="theme-color" content="#6b63ff" />
+  <link rel="canonical" href="https://orionventuresltd.com/DataVizAi.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chart to CSV in Seconds – DataViz AI" />
+  <meta
+    property="og:description"
+    content="Extract data from charts, PDFs, and screenshots instantly with DataViz AI. Convert visuals to CSV or Excel in seconds with AI."
+  />
+  <meta property="og:url" content="https://orionventuresltd.com/DataVizAi.html" />
+  <meta property="og:type" content="website" />
+  <!-- TODO(SEO): Replace with a real 1200×630 share image hosted on orionventuresltd.com -->
+  <meta property="og:image" content="https://orionventuresltd.com/datavizai-og-1200x630.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chart to CSV in Seconds – DataViz AI" />
+  <meta
+    name="twitter:description"
+    content="Extract data from charts, PDFs, and screenshots instantly with DataViz AI. Convert visuals to CSV or Excel in seconds with AI."
+  />
+  <!-- TODO(SEO): Replace with the same real 1200×630 share image as og:image -->
+  <meta name="twitter:image" content="https://orionventuresltd.com/datavizai-og-1200x630.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "DataViz AI",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Chrome",
+          "description": "AI tool to extract data from charts, PDFs, and screenshots and convert them to CSV or Excel.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does DataViz AI extract data from charts?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It uses AI to analyze visual elements and reconstruct the underlying data."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I extract data from PDFs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, DataViz AI works with charts inside PDFs, dashboards, and screenshots."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What formats can I export to?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CSV, Excel, and Google Sheets."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to install software?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, it works as a Chrome extension."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
   
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3024197688375764"
@@ -114,6 +194,11 @@
     }
 
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
+    .trustline{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
     .btn{
       appearance:none; border:0; cursor:pointer;
       padding:14px 24px;
@@ -134,6 +219,11 @@
       transform:translateY(-2px);
       box-shadow:0 18px 32px rgba(107,99,255,.32);
     }
+    .btnPrimary.big{
+      padding:15px 26px;
+      border-radius:16px;
+      box-shadow:0 16px 30px rgba(107,99,255,.28);
+    }
     .btnGhost{
       background:#fff;
       border:1px solid var(--line);
@@ -146,6 +236,34 @@
     }
 
     .right{padding:16px; display:flex; flex-direction:column; gap:10px}
+    .demoLabelRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:0 4px;
+    }
+    .demoLabel{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12.5px;
+      font-weight:700;
+      color:var(--ink);
+    }
+    .demoDot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 0 0 6px rgba(107,99,255,.10);
+      animation: demoPulse 2.2s ease-in-out infinite;
+    }
+    @keyframes demoPulse{
+      0%{transform:scale(1); box-shadow:0 0 0 6px rgba(107,99,255,.10)}
+      50%{transform:scale(1.12); box-shadow:0 0 0 10px rgba(107,99,255,.12)}
+      100%{transform:scale(1); box-shadow:0 0 0 6px rgba(107,99,255,.10)}
+    }
     .media{
       border-radius:16px;
       overflow:hidden;
@@ -153,6 +271,26 @@
       background:#000;
       box-shadow:var(--shadow2);
       aspect-ratio:16/10;
+      position:relative;
+    }
+    .media::after{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background:
+        radial-gradient(260px 180px at 20% 30%, rgba(255,255,255,.18), transparent 55%),
+        radial-gradient(240px 160px at 70% 65%, rgba(107,99,255,.16), transparent 58%);
+      mix-blend-mode:screen;
+      opacity:.0;
+      animation: demoGlowSweep 3.8s ease-in-out infinite;
+      pointer-events:none;
+    }
+    @keyframes demoGlowSweep{
+      0%{opacity:0; transform:translateY(8px) rotate(-2deg)}
+      22%{opacity:.55}
+      50%{opacity:.15; transform:translateY(-6px) rotate(1deg)}
+      78%{opacity:.55}
+      100%{opacity:0; transform:translateY(8px) rotate(-2deg)}
     }
     .media video{
       width:100%;
@@ -205,6 +343,181 @@
       color:var(--ink);
     }
     .benefit p{margin:0; color:var(--muted); font-size:14px; line-height:1.5;}
+
+    .quickSteps{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      align-items:stretch;
+    }
+    @media (max-width:980px){ .quickSteps{grid-template-columns:1fr} }
+    .quickStep{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:18px 18px 16px;
+      transition:all 0.3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .quickStep:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(107,99,255,.10);
+      border-color:rgba(107,99,255,.35);
+    }
+    .quickStep .kicker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .quickStep .num{
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:#fff;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 6px 14px rgba(107,99,255,.20);
+      flex:0 0 auto;
+    }
+    .quickStep b{
+      font-size:16px;
+      color:var(--ink);
+    }
+    .quickStep p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .compare{
+      margin-top:48px;
+      padding-top:48px;
+      border-top:1px solid var(--line);
+    }
+    .compareGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (max-width:980px){ .compareGrid{grid-template-columns:1fr} }
+    .compareCard{
+      padding:22px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 10px 22px rgba(18,21,39,.06);
+    }
+    .compareCard h3{
+      margin:0 0 10px;
+      font-size:16px;
+    }
+    .compareList{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .compareList li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+      border-radius:999px;
+      padding:5px 10px;
+      border:1px solid var(--line);
+      background:rgba(18,21,39,.03);
+      color:var(--ink);
+      flex:0 0 auto;
+    }
+    .pill.good{
+      border-color:rgba(107,99,255,.25);
+      background:rgba(107,99,255,.08);
+      color:var(--accent);
+    }
+
+    .finalCta{
+      margin-top:48px;
+      padding:26px;
+      border-radius:var(--radius);
+      border:1px solid rgba(107,99,255,.22);
+      background:
+        radial-gradient(900px 520px at 15% 0%, rgba(107,99,255,.18), transparent 60%),
+        radial-gradient(800px 520px at 90% 10%, rgba(123,92,255,.14), transparent 58%),
+        rgba(255,255,255,.85);
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .finalCta h2{
+      margin:0 0 6px;
+      font-size:26px;
+      letter-spacing:-.4px;
+    }
+    .finalCta p{
+      margin:0;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.6;
+      max-width:560px;
+    }
+
+    .faq{
+      margin-top:48px;
+      padding-top:48px;
+      border-top:1px solid var(--line);
+    }
+    .faqGrid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    details.faqItem{
+      padding:18px 18px 16px;
+    }
+    details.faqItem summary{
+      cursor:pointer;
+      font-weight:800;
+      color:var(--ink);
+      font-size:15px;
+      list-style:none;
+    }
+    details.faqItem summary::-webkit-details-marker{display:none;}
+    details.faqItem p{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    @media (max-width:520px){
+      .left{padding:24px}
+      .wrap{padding-bottom:56px}
+      .btn{width:100%}
+      .finalCta{padding:22px}
+      .finalCta h2{font-size:22px}
+    }
     
     .features-section{
       margin-top:48px;
@@ -275,17 +588,17 @@
 
     <main class="hero">
       <section class="panel left">
-        <div class="badge">Chrome Extension · Chart → CSV</div>
+        <div class="badge">Chrome Extension · Visual → Data</div>
 
-        <h1>Stop redrawing charts.</h1>
+        <h1>Extract data from charts in seconds — not hours.</h1>
         <p class="sub">
           Extract real data from charts, tables, screenshots, and PDFs —
-          and open it instantly in Excel or Google Sheets.
+          then export as <strong>chart to CSV</strong> or <strong>convert charts to Excel</strong> (or Google Sheets) in seconds.
         </p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary" id="btnStoreTop" href="https://chromewebstore.google.com/detail/dataviz-ai-table-to-excel/defpddnlapbfilljlafahedpopojjohj?hl=en-US&utm_source=ext_sidebar" target="_blank" rel="noopener">
-            <span>Get it on Chrome Web Store</span>
+          <a class="btn btnPrimary big" id="btnStoreTop" href="https://chromewebstore.google.com/detail/dataviz-ai-table-to-excel/defpddnlapbfilljlafahedpopojjohj?hl=en-US&utm_source=ext_sidebar" target="_blank" rel="noopener">
+            <span>Get it on Chrome — Free</span>
             <span>→</span>
           </a>
           <a class="btn btnGhost" href="#demo">
@@ -293,37 +606,67 @@
             <span>↓</span>
           </a>
         </div>
+        <p class="trustline">No signup required · Works on any chart · Export in seconds</p>
 
         <div class="benefits">
           <div class="benefit">
-            <b>⚡ Save time</b>
-            <p>Go from chart → CSV in seconds. No more manual data entry.</p>
+            <b>Save hours of manual work</b>
+            <p>Go from chart to CSV in seconds instead of manually rebuilding data.</p>
           </div>
           <div class="benefit">
-            <b>✓ Fewer errors</b>
-            <p>No manual retyping of numbers. AI-powered accuracy.</p>
+            <b>Eliminate human errors</b>
+            <p>No more copy-paste mistakes. AI extracts data with precision.</p>
           </div>
           <div class="benefit">
-            <b>🌐 Works anywhere</b>
-            <p>Dashboards, PDFs, screenshots, and more.</p>
+            <b>Works everywhere</b>
+            <p>Charts, dashboards, PDFs, screenshots — extract data from any visual source.</p>
           </div>
         </div>
       </section>
 
       <aside class="panel right" id="demo">
+        <div class="demoLabelRow" aria-hidden="true">
+          <div class="demoLabel"><span class="demoDot"></span> Live demo</div>
+          <div style="font-size:12.5px; color:var(--muted); font-weight:700;">Select → Extract → Export</div>
+        </div>
         <div class="media">
           <video id="demoVideo"
             src="assets/datavizai.mov"
             muted
             playsinline
-            autoplay>
+            autoplay
+            preload="metadata"
+            aria-label="DataViz AI extracting data from chart to CSV demo">
           </video>
         </div>
         <div class="mediaCap">
-          Chart → Select Area → CSV (looped demo)
+          Select → Extract → Export (looped demo)
         </div>
       </aside>
     </main>
+
+    <!-- NEW: 3-SECOND FLOW -->
+    <section class="features-section" style="margin-top:18px; padding-top:0; border-top:0;">
+      <h2 style="font-size:32px; font-weight:800; margin:0 0 12px; color:var(--ink); text-align:center; letter-spacing:-.6px;">From visual to data in 3 seconds</h2>
+      <p style="text-align:center; color:var(--muted); font-size:16px; margin:0 0 10px; max-width:640px; margin-left:auto; margin-right:auto;">
+        Extract data instantly — without manual work, retyping, or rebuilding charts.
+      </p>
+
+      <div class="quickSteps">
+        <div class="quickStep">
+          <div class="kicker"><div class="num">1</div><b>Capture</b></div>
+          <p>Select any chart or table on screen.</p>
+        </div>
+        <div class="quickStep">
+          <div class="kicker"><div class="num">2</div><b>Extract</b></div>
+          <p>AI reads and reconstructs the underlying data.</p>
+        </div>
+        <div class="quickStep">
+          <div class="kicker"><div class="num">3</div><b>Export</b></div>
+          <p>Download as CSV or open in Excel/Sheets instantly.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- FEATURES SECTION -->
     <section class="features-section">
@@ -335,18 +678,45 @@
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">📸</div>
-          <h3>Capture</h3>
-          <p>Select any chart, table, or data visualization on the web or in a PDF.</p>
+          <h3>Select any chart</h3>
+          <p>Choose any chart, table, or visual in a dashboard, PDF, or screenshot.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🤖</div>
-          <h3>Extract</h3>
-          <p>Our AI analyzes the image and extracts the underlying data automatically.</p>
+          <h3>Let AI extract the data</h3>
+          <p>DataViz AI reads the visual and reconstructs the numbers automatically.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📊</div>
-          <h3>Export</h3>
+          <h3>Export to CSV, Excel, or Sheets</h3>
           <p>Download as CSV or open directly in Excel or Google Sheets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="compare" aria-label="Manual vs DataViz AI comparison">
+      <h2 style="font-size:28px; font-weight:800; margin:0 0 10px; color:var(--ink); letter-spacing:-.4px;">Why not just copy manually?</h2>
+      <p style="margin:0; color:var(--muted); font-size:15.5px; max-width:720px;">
+        Manual data extraction is slow and error-prone. DataViz AI turns visuals into real data instantly — so you can focus on analysis instead of retyping.
+      </p>
+
+      <div class="compareGrid">
+        <div class="compareCard">
+          <h3>Manual</h3>
+          <ul class="compareList">
+            <li><span class="pill">SLOW</span><span>Time-consuming retyping and rebuilding charts.</span></li>
+            <li><span class="pill">ERRORS</span><span>Easy to introduce copy-paste mistakes.</span></li>
+            <li><span class="pill">FRUSTRATING</span><span>Breaks your flow when you just need the data.</span></li>
+          </ul>
+        </div>
+        <div class="compareCard">
+          <h3>DataViz AI</h3>
+          <ul class="compareList">
+            <li><span class="pill good">INSTANT</span><span>Extract data from charts in seconds — not hours.</span></li>
+            <li><span class="pill good">ACCURATE</span><span>Reduce human error with automated extraction.</span></li>
+            <li><span class="pill good">EFFORTLESS</span><span>Select → Extract → Export. Done.</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -357,29 +727,70 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
         <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
           <div style="font-size:20px; margin-bottom:8px;">📈</div>
-          <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Analysts</div>
-          <div style="font-size:13px; color:var(--muted);">Extract data from research reports and dashboards</div>
+          <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Data Analysts</div>
+          <div style="font-size:13px; color:var(--muted);">Extract data from dashboards and reports instantly</div>
         </div>
         <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
           <div style="font-size:20px; margin-bottom:8px;">💼</div>
           <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Business Users</div>
-          <div style="font-size:13px; color:var(--muted);">Convert PDF charts into editable spreadsheets</div>
+          <div style="font-size:13px; color:var(--muted);">Turn PDFs and charts into editable spreadsheets</div>
         </div>
         <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
           <div style="font-size:20px; margin-bottom:8px;">🎓</div>
           <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Students</div>
-          <div style="font-size:13px; color:var(--muted);">Extract data from academic papers and presentations</div>
+          <div style="font-size:13px; color:var(--muted);">Extract data from academic charts in seconds</div>
         </div>
         <div style="padding:20px; background:#fff; border:1px solid var(--line); border-radius:12px;">
           <div style="font-size:20px; margin-bottom:8px;">🔬</div>
           <div style="font-weight:600; margin-bottom:4px; color:var(--ink);">Researchers</div>
-          <div style="font-size:13px; color:var(--muted);">Quickly digitize data from published studies</div>
+          <div style="font-size:13px; color:var(--muted);">Digitize data from published studies quickly</div>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <h2 style="font-size:28px; font-weight:800; margin:0 0 10px; color:var(--ink); letter-spacing:-.4px;">FAQ</h2>
+      <p style="margin:0; color:var(--muted); font-size:15.5px; max-width:760px;">
+        Quick answers about DataViz AI, an <strong>AI data extraction tool</strong> that helps you <strong>extract data from charts</strong> and <strong>extract data from PDF</strong> visuals.
+      </p>
+
+      <div class="faqGrid">
+        <details class="feature-card faqItem">
+          <summary>How does DataViz AI extract data from charts?</summary>
+          <p>It uses AI to analyze visual elements and reconstruct the underlying data.</p>
+        </details>
+        <details class="feature-card faqItem">
+          <summary>Can I extract data from PDFs?</summary>
+          <p>Yes, DataViz AI works with charts inside PDFs, dashboards, and screenshots.</p>
+        </details>
+        <details class="feature-card faqItem">
+          <summary>What formats can I export to?</summary>
+          <p>CSV, Excel, and Google Sheets.</p>
+        </details>
+        <details class="feature-card faqItem">
+          <summary>Do I need to install software?</summary>
+          <p>No, it works as a Chrome extension.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="finalCta" aria-label="Get DataViz AI on Chrome">
+      <div>
+        <h2>Stop wasting time on manual data extraction</h2>
+        <p>Install DataViz AI and turn any chart into real data instantly.</p>
+      </div>
+      <div class="ctaRow" style="margin:0;">
+        <a class="btn btnPrimary big" id="btnStoreBottom" href="https://chromewebstore.google.com/detail/dataviz-ai-table-to-excel/defpddnlapbfilljlafahedpopojjohj?hl=en-US&utm_source=ext_sidebar" target="_blank" rel="noopener">
+          <span>Get DataViz AI on Chrome</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
     <!-- AD SECTION -->
-    <div style="max-width: var(--max); margin: 20px auto 0; padding: 0 18px;">
+    <div style="max-width: var(--max); margin: 16px auto 0; padding: 0 18px;">
       <div style="border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px 0; text-align: center;">
         <ins class="adsbygoogle"
              style="display:block; text-align:center; max-height: 120px;"
@@ -472,12 +883,11 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Chrome Web Store URL
+    // Chrome Web Store URL (single source of truth)
     const CHROME_WEB_STORE_URL = "https://chromewebstore.google.com/detail/dataviz-ai-table-to-excel/defpddnlapbfilljlafahedpopojjohj?hl=en-US&utm_source=ext_sidebar";
-
-    document.getElementById('btnStoreTop').addEventListener('click', e => {
-      e.target.href = CHROME_WEB_STORE_URL;
-    });
+    document.getElementById('btnStoreTop').href = CHROME_WEB_STORE_URL;
+    const bottomBtn = document.getElementById('btnStoreBottom');
+    if (bottomBtn) bottomBtn.href = CHROME_WEB_STORE_URL;
 
     // 🎥 Video loop logic
     const v = document.getElementById('demoVideo');
