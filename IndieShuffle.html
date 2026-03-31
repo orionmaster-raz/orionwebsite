@@ -3,12 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google-adsense-account" content="ca-pub-3024197688375764" />
-  <title>IndieShuffle – 10 New Indie Songs Every Day</title>
+  <title>IndieShuffle – Daily Indie Playlist in Chrome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="IndieShuffle is a Chrome extension that delivers 10 fresh indie tracks from around the world every day – right in your browser."
+    content="Discover 10 fresh indie tracks every day with IndieShuffle, a lightweight Chrome extension for effortless music discovery—no signup, no endless scrolling."
   />
+  <link rel="icon" type="image/png" href="indie_logo.png" />
+  <link rel="apple-touch-icon" href="indie_logo.png" />
+  <link rel="canonical" href="https://orionventuresltd.com/IndieShuffle.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="IndieShuffle – Daily Indie Playlist in Chrome" />
+  <meta
+    property="og:description"
+    content="Discover 10 fresh indie tracks every day with IndieShuffle, a lightweight Chrome extension for effortless music discovery—no signup, no endless scrolling."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orionventuresltd.com/IndieShuffle.html" />
+  <!-- TODO(SEO): Replace with a real 1200×630 share image hosted on orionventuresltd.com -->
+  <meta property="og:image" content="https://orionventuresltd.com/indieshuffle-og-1200x630.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IndieShuffle – Daily Indie Playlist in Chrome" />
+  <meta
+    name="twitter:description"
+    content="Discover 10 fresh indie tracks every day with IndieShuffle, a lightweight Chrome extension for effortless music discovery—no signup, no endless scrolling."
+  />
+  <!-- TODO(SEO): Replace with the same real 1200×630 share image as og:image -->
+  <meta name="twitter:image" content="https://orionventuresltd.com/indieshuffle-og-1200x630.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "IndieShuffle",
+          "applicationCategory": "MusicApplication",
+          "operatingSystem": "Chrome",
+          "browserRequirements": "Requires Google Chrome",
+          "description": "IndieShuffle is a lightweight Chrome music extension for indie music discovery. It delivers 10 fresh indie tracks every day inside a popup with no signup and no friction.",
+          "url": "https://orionventuresltd.com/IndieShuffle.html",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Orion Ventures Ltd.",
+            "url": "https://orionventuresltd.com/",
+            "email": "info@orionventuresltd.com"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Orion Ventures Ltd.",
+          "url": "https://orionventuresltd.com/",
+          "email": "info@orionventuresltd.com"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is IndieShuffle?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "IndieShuffle is a lightweight Chrome extension for indie music discovery that gives you 10 fresh indie tracks every day in a simple popup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does IndieShuffle work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Install the Chrome music extension, click the IndieShuffle icon, and press play. You get a new daily indie playlist of 10 picks each day."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need a Spotify or YouTube account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. IndieShuffle is designed for discovery without friction, and you do not need to create an account or sign up to start exploring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How often does IndieShuffle update its songs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "IndieShuffle updates daily with 10 new indie songs every day."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3024197688375764"
@@ -27,6 +123,7 @@
       --radius-lg: 20px;
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
       --shadow-pill: 0 10px 30px rgba(79, 70, 229, 0.55);
+      --shadow-card-hover: 0 22px 60px rgba(15, 23, 42, 0.85);
     }
 
     * {
@@ -83,6 +180,17 @@
       box-shadow: 0 10px 25px rgba(34, 197, 94, 0.65);
     }
 
+    .logo-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.45);
+      border: 1px solid rgba(79, 70, 229, 0.25);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
     .logo-text {
       display: flex;
       flex-direction: column;
@@ -127,6 +235,28 @@
       box-shadow: 0 0 14px rgba(34, 197, 94, 0.9);
     }
 
+    .nav-cta-pill span.badge-dot.pulse {
+      animation: softPulse 2.3s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 14px rgba(34, 197, 94, 0.85);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.15);
+        box-shadow: 0 0 22px rgba(34, 197, 94, 0.95);
+        opacity: 0.95;
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 14px rgba(34, 197, 94, 0.85);
+        opacity: 1;
+      }
+    }
+
     /* Hero */
     .hero {
       display: grid;
@@ -166,6 +296,7 @@
       font-size: clamp(2.2rem, 4vw, 3rem);
       margin-bottom: 12px;
       letter-spacing: -0.03em;
+      font-weight: 700;
     }
 
     .hero h1 span.gradient {
@@ -174,10 +305,17 @@
       color: transparent;
     }
 
+    .hero-lede {
+      font-size: 15px;
+      color: #d1d5db;
+      margin-bottom: 10px;
+      max-width: 560px;
+    }
+
     .hero-sub {
       font-size: 15px;
       color: var(--text-muted);
-      max-width: 480px;
+      max-width: 560px;
       margin-bottom: 22px;
     }
 
@@ -228,6 +366,25 @@
       gap: 8px;
       cursor: pointer;
       text-decoration: none;
+      transition: transform 0.12s ease, border-color 0.12s ease, color 0.12s ease,
+        background 0.12s ease;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      border-color: rgba(79, 70, 229, 0.35);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .btn-primary:focus-visible,
+    .btn-ghost:focus-visible,
+    .song-item:focus-visible,
+    .feature-card:focus-visible,
+    .step:focus-visible,
+    .hero-card:focus-visible {
+      outline: 2px solid rgba(99, 102, 241, 0.65);
+      outline-offset: 3px;
     }
 
     .hero-meta {
@@ -248,6 +405,13 @@
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: rgba(79, 70, 229, 0.25);
     }
 
     .hero-card::before {
@@ -273,6 +437,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 14px;
+      gap: 10px;
     }
 
     .browser-dots {
@@ -308,6 +473,18 @@
       border: 1px solid #111827;
     }
 
+    .popup-label {
+      font-size: 10px;
+      color: #c7d2fe;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.14);
+      border: 1px solid rgba(79, 70, 229, 0.22);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
     .song-list {
       margin-top: 8px;
       border-radius: 18px;
@@ -339,6 +516,25 @@
       color: #c7d2fe;
     }
 
+    .song-list-header span.badge.pulse {
+      animation: badgePulse 2.6s ease-in-out infinite;
+    }
+
+    @keyframes badgePulse {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-1px);
+        opacity: 0.92;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
     .song-item {
       display: flex;
       align-items: center;
@@ -347,6 +543,7 @@
       padding: 7px 6px;
       border-radius: 12px;
       transition: background 0.1s ease, transform 0.1s ease;
+      cursor: default;
     }
 
     .song-item:hover {
@@ -402,6 +599,21 @@
       background: #22c55e;
     }
 
+    .song-item.is-playing {
+      background: rgba(79, 70, 229, 0.12);
+      border: 1px solid rgba(79, 70, 229, 0.2);
+    }
+
+    .song-item.is-playing .song-title {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .song-item.is-playing .song-play {
+      color: #c7d2fe;
+      font-weight: 600;
+    }
+
     .daily-counter {
       margin-top: 10px;
       padding: 7px 9px;
@@ -441,6 +653,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+      align-items: stretch;
     }
 
     @media (max-width: 880px) {
@@ -460,6 +673,18 @@
       border: 1px solid #111827;
       padding: 14px 14px 16px;
       font-size: 13px;
+      min-height: 132px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.14s ease, border-color 0.14s ease,
+        box-shadow 0.14s ease, background 0.14s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(79, 70, 229, 0.22);
+      box-shadow: 0 18px 50px rgba(2, 6, 23, 0.6);
+      background: rgba(15, 23, 42, 0.95);
     }
 
     .feature-label {
@@ -501,6 +726,14 @@
       font-size: 13px;
       position: relative;
       overflow: hidden;
+      transition: transform 0.14s ease, border-color 0.14s ease,
+        box-shadow 0.14s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-2px);
+      border-color: rgba(79, 70, 229, 0.18);
+      box-shadow: 0 18px 50px rgba(2, 6, 23, 0.55);
     }
 
     .step-number {
@@ -558,6 +791,26 @@
       align-items: center;
       gap: 16px;
       justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(
+        circle at 20% 20%,
+        rgba(79, 70, 229, 0.22),
+        transparent 55%
+      );
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .cta-section > * {
+      position: relative;
+      z-index: 1;
     }
 
     .cta-section h2 {
@@ -591,6 +844,36 @@
       text-decoration: underline;
       text-decoration-style: dotted;
     }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-bottom: 52px;
+      }
+
+      .hero {
+        margin-bottom: 44px;
+      }
+
+      .hero-ctas a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-card {
+        padding: 16px 14px 16px;
+      }
+
+      .browser-bar {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .browser-url {
+        order: 3;
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -598,7 +881,15 @@
     <!-- NAV -->
     <header class="nav">
       <div class="logo-area">
-        <div class="logo-circle">IS</div>
+        <img
+          class="logo-img"
+          src="indie_logo.png"
+          alt="IndieShuffle logo"
+          width="34"
+          height="34"
+          loading="eager"
+          decoding="async"
+        />
         <div class="logo-text">
           <span>IndieShuffle</span>
           <span>Daily indie picks</span>
@@ -606,29 +897,30 @@
       </div>
       <div class="nav-cta">
         <div class="nav-cta-pill">
-          <span class="badge-dot"></span>
+          <span class="badge-dot pulse" aria-hidden="true"></span>
           <span>New indie drops every morning</span>
         </div>
       </div>
     </header>
 
+    <main>
     <!-- HERO -->
     <section class="hero">
       <div>
         <div class="hero-title-pill">
           <span class="dot"></span>
-          Global indie discovery · On autopilot
+          Global indie discovery · No tab-switching required
         </div>
 
         <h1>
-          Your <span class="gradient">daily indie playlist</span>, inside Chrome.
+          Discover new indie music without leaving your workflow.
         </h1>
 
+        <p class="hero-lede">10 fresh tracks every day, delivered inside Chrome.</p>
+
         <p class="hero-sub">
-          <strong>IndieShuffle</strong> is a Chrome extension that delivers
-          <strong>10 fresh indie tracks every day</strong> — hidden gems, global
-          scenes, and underground artists you won’t find in the usual
-          algorithms.
+          IndieShuffle is a lightweight <strong>Chrome music extension</strong> that gives you a handpicked daily batch of indie songs from around the world —
+          no signup, no endless scrolling, no algorithm fatigue.
         </p>
 
         <div class="hero-ctas">
@@ -648,13 +940,13 @@
         </div>
 
         <p class="hero-meta">
-          No account required · Picks update daily · Built for people who always
-          ask <span>“what indie should I play next?”</span>
+          No account required · New picks every day · Built for people who want
+          discovery without the friction
         </p>
       </div>
 
       <!-- Right side visual -->
-      <div class="hero-card">
+      <div class="hero-card" tabindex="0" aria-label="Chrome popup preview of IndieShuffle">
         <div class="hero-card-inner">
           <div class="browser-bar">
             <div class="browser-dots">
@@ -662,6 +954,7 @@
               <span class="browser-dot yellow"></span>
               <span class="browser-dot green"></span>
             </div>
+            <div class="popup-label">Chrome popup preview</div>
             <div class="browser-url">
               IndieShuffle • Today’s 10 picks
             </div>
@@ -670,10 +963,10 @@
           <div class="song-list">
             <div class="song-list-header">
               <span class="label">Today’s mix</span>
-              <span class="badge">10 new songs</span>
+              <span class="badge pulse">10 new songs</span>
             </div>
 
-            <div class="song-item">
+            <div class="song-item is-playing" tabindex="0" role="button" aria-label="Now playing: Kyoto Rain">
               <div class="song-main">
                 <div class="song-art">01</div>
                 <div class="song-text">
@@ -686,7 +979,7 @@
               </div>
             </div>
 
-            <div class="song-item">
+            <div class="song-item" tabindex="0" role="button" aria-label="Play: Desert Metroline">
               <div class="song-main">
                 <div class="song-art">02</div>
                 <div class="song-text">
@@ -697,7 +990,7 @@
               <div class="song-play">Tap to play ▸</div>
             </div>
 
-            <div class="song-item">
+            <div class="song-item" tabindex="0" role="button" aria-label="Play: Midnight Rooftops">
               <div class="song-main">
                 <div class="song-art">03</div>
                 <div class="song-text">
@@ -708,7 +1001,7 @@
               <div class="song-play">Tap to play ▸</div>
             </div>
 
-            <div class="song-item">
+            <div class="song-item" tabindex="0" role="button" aria-label="Play: Ocean Static">
               <div class="song-main">
                 <div class="song-art">04</div>
                 <div class="song-text">
@@ -719,7 +1012,7 @@
               <div class="song-play">Tap to play ▸</div>
             </div>
 
-            <div class="song-item">
+            <div class="song-item" tabindex="0" role="button" aria-label="Play: Sunset Wires">
               <div class="song-main">
                 <div class="song-art">05</div>
                 <div class="song-text">
@@ -739,18 +1032,39 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- FLOW / NO FRICTION -->
     <section class="section">
-      <h2>Why IndieShuffle?</h2>
+      <h2>No tabs. No switching. No friction.</h2>
       <p class="section-sub">
-        There’s endless indie music out there – but digging for it every day is
-        work. IndieShuffle does the digging for you and hands you a fresh batch
-        in one click.
+        IndieShuffle lives inside Chrome, so <strong>indie music discovery</strong> takes one click instead of a whole search session.
       </p>
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-label">Discovery</div>
+          <h3>Open instantly</h3>
+          <p>Click the extension and today’s picks are already there.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Stay in your flow</h3>
+          <p>No switching to Spotify, YouTube, or a dozen recommendation tabs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Listen with less effort</h3>
+          <p>Just press play and explore a fresh batch curated for curious ears.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <h2>Why IndieShuffle?</h2>
+      <p class="section-sub">
+        There’s endless indie music out there — but digging for it every day is work.
+        IndieShuffle is a <strong>daily indie playlist</strong> built for fast, low-friction discovery.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
           <h3>10 new indie songs, every day</h3>
           <p>
             Wake up to a new mini-playlist. No searching, no scrolling, no
@@ -758,44 +1072,47 @@
           </p>
         </div>
         <div class="feature-card">
-          <div class="feature-label">Global</div>
-          <h3>Indie from everywhere</h3>
+          <h3>Global, not generic</h3>
           <p>
-            Tracks from different countries, scenes, and small creators –
-            perfect if your taste is curious and restless.
+            Discover tracks from different countries, scenes, and smaller artists you likely would not find through mainstream recommendations.
           </p>
         </div>
         <div class="feature-card">
-          <div class="feature-label">Non-mainstream</div>
-          <h3>Outside your usual bubble</h3>
+          <h3>Built for curious listeners</h3>
           <p>
-            Designed to surface stuff you probably wouldn’t see in your standard
-            Spotify / YouTube recommendations.
+            Perfect for people who always want something new, but do not want to spend time hunting for it.
           </p>
         </div>
+      </div>
+    </section>
 
+    <!-- BENEFITS -->
+    <section class="section">
+      <h2>Built for discovery without breaking your flow</h2>
+      <p class="section-sub">
+        A lightweight Chrome extension experience: fast to open, easy to listen, and simple to return to every day.
+      </p>
+
+      <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-label">Instant</div>
-          <h3>Plays in the popup</h3>
+          <div class="feature-label">INSTANT</div>
+          <h3>Plays right in the popup</h3>
           <p>
-            Open the extension, hit play, and listen right there. No extra
-            windows or 10 tabs.
+            Open the extension, hit play, and listen immediately without opening extra windows.
           </p>
         </div>
         <div class="feature-card">
-          <div class="feature-label">Lightweight</div>
+          <div class="feature-label">LIGHTWEIGHT</div>
           <h3>No signup, no clutter</h3>
           <p>
-            Install, click, listen. No account needed to start exploring new
-            indie music.
+            Install it, click once, and start discovering. No account needed.
           </p>
         </div>
         <div class="feature-card">
-          <div class="feature-label">Habit</div>
-          <h3>Your 2-minute daily ritual</h3>
+          <div class="feature-label">HABIT</div>
+          <h3>A 2-minute daily discovery ritual</h3>
           <p>
-            Turn “what should I listen to?” into a tiny daily ritual: open
-            IndieShuffle and let it decide.
+            Turn “what should I listen to?” into a tiny daily habit that keeps your taste moving.
           </p>
         </div>
       </div>
@@ -805,8 +1122,7 @@
     <section class="section" id="how-it-works">
       <h2>How it works</h2>
       <p class="section-sub">
-        IndieShuffle is built to be simple. No complex controls, no learning
-        curve – just a quick way to inject fresh indie tracks into your day.
+        IndieShuffle is built to be simple — a quick way to discover new indie music without the usual effort.
       </p>
 
       <div class="steps">
@@ -814,24 +1130,21 @@
           <div class="step-number">1</div>
           <h3>Add IndieShuffle to Chrome</h3>
           <p>
-            Install the extension from the Chrome Web Store in a few seconds. A
-            small icon will appear next to your address bar.
+            Install it in seconds from the Chrome Web Store. The icon will sit quietly in your toolbar until you want something new.
           </p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
           <h3>Open the popup</h3>
           <p>
-            Click the IndieShuffle icon whenever you want new music. You’ll see
-            today’s 10 tracks waiting for you.
+            Click the IndieShuffle icon anytime and today’s 10 picks are ready.
           </p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
           <h3>Press play, discover, repeat</h3>
           <p>
-            Listen through, save what you like, skip what you don’t. Tomorrow
-            you’ll get a brand-new batch.
+            Listen through the batch, save what you love, skip what you do not, and come back tomorrow for a new drop.
           </p>
         </div>
       </div>
@@ -841,21 +1154,64 @@
     <section class="section">
       <div class="quote">
         <p>
-          “My playlists were stuck on repeat. Now every morning I get 10 random
-          indie tracks from different places in the world. Some are weird, some
-          are mid, and one or two are absolutely perfect. That’s the fun of it.”
+          “My playlists were getting predictable. Now every morning I get 10 random indie tracks from different places in the world. Some are weird, some are forgettable, and one or two are exactly what I was hoping to find.”
         </p>
-        <small>— Someone who lives inside indie rabbit holes</small>
+        <small>— For listeners who like going down music rabbit holes</small>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2>FAQ</h2>
+      <p class="section-sub">
+        Quick answers about IndieShuffle, the lightweight Chrome extension for indie music discovery.
+      </p>
+
+      <div class="features-grid" style="grid-template-columns: minmax(0, 1fr); gap: 12px;">
+        <details class="feature-card">
+          <summary style="cursor: pointer; font-weight: 600; color: #e5e7eb;">
+            What is IndieShuffle?
+          </summary>
+          <p style="margin-top: 8px;">
+            IndieShuffle is a lightweight <strong>Chrome music extension</strong> built for <strong>indie music discovery</strong>. It delivers <strong>10 fresh indie tracks every day</strong> in a simple popup.
+          </p>
+        </details>
+
+        <details class="feature-card">
+          <summary style="cursor: pointer; font-weight: 600; color: #e5e7eb;">
+            How does IndieShuffle work?
+          </summary>
+          <p style="margin-top: 8px;">
+            Add IndieShuffle to Chrome, click the icon, and press play. You’ll get a <strong>daily indie playlist</strong> of 10 picks, refreshed every day.
+          </p>
+        </details>
+
+        <details class="feature-card">
+          <summary style="cursor: pointer; font-weight: 600; color: #e5e7eb;">
+            Do I need a Spotify or YouTube account?
+          </summary>
+          <p style="margin-top: 8px;">
+            No. There’s <strong>no signup</strong> required. IndieShuffle is designed to help you <strong>discover new indie music</strong> without extra friction.
+          </p>
+        </details>
+
+        <details class="feature-card">
+          <summary style="cursor: pointer; font-weight: 600; color: #e5e7eb;">
+            How often does IndieShuffle update its songs?
+          </summary>
+          <p style="margin-top: 8px;">
+            Every day. IndieShuffle drops <strong>new indie songs every day</strong> — 10 fresh tracks, daily.
+          </p>
+        </details>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section">
       <div>
-        <h2>Ready to shake up your listening habits?</h2>
+        <h2>Ready to refresh your listening habits?</h2>
         <p>
-          Add IndieShuffle to Chrome and let it drop 10 new indie songs into
-          your day – no signup, no pressure, just pure discovery.
+          Add IndieShuffle to Chrome and get 10 new indie tracks every day — no signup, no pressure, just effortless discovery.
         </p>
       </div>
       <div class="cta-buttons">
@@ -887,6 +1243,8 @@
         </script>
       </div>
     </div>
+
+    </main>
 
     <footer style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border-subtle); font-size: 11px; color: var(--text-muted); text-align: center;">
       <div style="margin-bottom: 8px;">
